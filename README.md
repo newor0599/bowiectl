@@ -15,8 +15,8 @@ under development 🔨🏗️
 `anc [value:int|str]` <br>
 **Sets ANC profile**
 - 0-10 : ANC Intensity
-- off : equavalent to `anc 0`
-- on : same as `anc general`
+- off : equavalent of `anc 0`
+- on : equavalent of `anc general`
 - general
 - indoor
 - outdoor
