@@ -12,7 +12,7 @@ Create a cross-platform open source app that can configure bowei MA10 Pro earbud
 under development 🔨🏗️ 
 
 #### Daemon
-`api [value:int|str]` <br>
+`anc [value:int|str]` <br>
 **Sets ANC profile**
 - 0-10 : ANC Intensity
 - off : equavalent to `anc 0`
