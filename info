@@ -1,0 +1,107 @@
+(ANC)
+ba340101 ANC 1 
+ba340102 ANC 2 
+ba340103 ANC 3 
+ba340104 ANC 4 
+ba340105 ANC 5 
+ba340106 ANC 6 
+ba340107 ANC 7 
+ba340108 ANC 8 
+ba340109 ANC 9 
+ba34010A ANC 10
+ba340165 ANC General
+ba340166 ANC Indoor
+ba340167 ANC Outdoor
+ba3400ff ANC Off
+ba3402ff Transparency
+
+(Left Earbud) (Double Tap)
+ba220001ff Play Pause
+ba220002ff Player Previous
+ba220003ff Player Next
+ba220004ff Phone assistance
+ba220005ff Toggle Low Latency
+ba220006ff Switch ANC Profile list
+ba22000bff Increase volume
+ba22000cff Decrease volume
+ba220000ff None
+
+(Left Earbud) (Hold Tap)
+ba220201ff Play Pause
+ba220202ff Player Previous
+ba220203ff Player Next
+ba220204ff Phone assistance
+ba220205ff Toggle Low Latency Mode
+ba220206ff Switch ANC Profile in list
+ba22020bff Increase volume
+ba22020cff Decrease volume
+ba220200ff None
+
+(Right Earbud) (Double Tap)
+ba2202ff01 Play Pause
+ba2202ff02 Player Previous
+ba2202ff03 Player Next
+ba2202ff04 Phone assistance
+ba2202ff05 Toggle Low Latency Mode
+ba2202ff06 Switch ANC Profile in list
+ba2202ff0b Increase volume
+ba2202ff0c Decrease volume
+ba2202ff00 None
+
+(Right Earbud) (Hold Tap)
+ba2202ff01 Play Pause
+ba2202ff02 Player Previous
+ba2202ff03 Player Next
+ba2202ff04 Phone assistance
+ba2202ff05 Toggle Low Latency Mode
+ba2202ff06 Switch ANC Profile in list
+ba2202ff0b Increase volume
+ba2202ff0c Decrease volume
+ba2202ff00 None
+
+(Left/Right Earbud) (Triple Tap)
+ba22010505 Toggle Low Latency Mode
+ba22010504 Phone assistance
+
+(Spactial audio effect)
+ba4300 None
+ba4301 Music
+ba4303 Gaming
+
+(Return Value)
+aa3401 (successful anc profile change) 
+aa123c721867aa4100000000000001 (Left earbud not available)
+aa123c721867aa4100000000000000 (Right earbud not available)
+aa025a005a01 (Both earbud connected)
+aa3101 (Successful eq change)
+aa1001 (Successful ping toggle)
+aa2201 (Successful touch action change)
+
+(Get Value)
+ba02 Earbud battery
+ba27 Case battery
+
+(EQ)
+60-120-180
+ba31656400{}000a000100c800{}000a0001009001{}000a0001002003{}000a000100e803{}000a000100b80b{}000a0001007017{}000a0001001027{}000a000100
+100 200 400 800 1k 3k 6k 10k
++6db >= x >= -6db
+db to bt x * 10 + 120
+bt to db (x - 120) // 10
+amount of frequency = (data.length-11)//8
+freq index = 5+8*i
+
+(Ping device)
+ba100001 (start ping left )
+ba100000 ( stop ping left )
+ba100101 (start ping right)
+ba100100 ( stop ping right)
+
+(Architecture)
+send data with header of ba{action id}
+return data with header of aa{action id}
+
+aa21000101 (Play Pause) (Left) (Double Tap)
+aa21000601 (ANC) (Left) (Double Tap)
+aa21020606 (ANC) (Left) (Hold)
+aa21010404 (Assist) (Triple Tap)
