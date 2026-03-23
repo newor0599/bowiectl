@@ -2,10 +2,6 @@ import asyncio
 from bleak import BleakClient, BleakScanner
 from bleak.backends.device import BLEDevice
 
-# UUID
-# Read  : 654b749c-e37f-ae1f-ebab-40ca133e3690
-# Write : ee684b1a-1e9b-ed3e-ee55-f894667e92ac
-
 
 class BASEUS:
     def __init__(self):
@@ -26,7 +22,7 @@ class BASEUS:
                 if self.verbose:
                     print(f"Found {self.address}")
                 return device.address
-        return None
+        return
 
     async def update_devices(self) -> None:
         if self.verbose:
@@ -47,8 +43,10 @@ class BASEUS:
         if self.verbose:
             print("Device connected")
 
-    async def write(self, data: str = None) -> None:
-        if None in (self.client, data):
+    async def write(self, data: str = "") -> None:
+        if self.client is None:
+            return
+        if data == "":
             return
         await self.client.write_gatt_char(
             self.code_write,
@@ -130,7 +128,7 @@ class BASEUS:
         await self.write(code)
 
     # Left, Right, Case
-    async def get_battery(self) -> list[int]:
+    async def get_battery(self) -> tuple[int, int, int]:
         if self.client is None:
             return
         buds = await self.read("ba02")  # Buds battery

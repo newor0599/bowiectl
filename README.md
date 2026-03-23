@@ -8,6 +8,7 @@ The original earbud configuration app is only available on phone and isn't open 
 Create a cross-platform open source app that can configure bowei MA10 Pro earbud
 
 ### Usage
+Before running main.py, ensure bleak is installed from pip
 #### API
 under development 🔨🏗️ 
 
