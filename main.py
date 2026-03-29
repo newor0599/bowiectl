@@ -23,7 +23,7 @@ class APP:
         self.base = BASEUS()
         self.base.verbose = True
         await self.base.init()
-        if self.base.address is None:
+        if self.base.address == "":
             print("[INFO] No Baseus Bowie MA10 Pro found!")
             print("[INFO] Quitting!")
             return
